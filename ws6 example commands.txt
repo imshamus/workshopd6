@@ -1,0 +1,15 @@
+java -cp ./target/workshopd6-1.0-SNAPSHOT.jar workshopd6.App 		running jar
+
+java -cp ./target/workshopd6-1.0-SNAPSHOT.jar workshopd6.ServerApp 3000 cookie_file.txt		running jar
+java -cp ./target/workshopd6-1.0-SNAPSHOT.jar workshopd6.ClientApp localhost:3000			running jar
+
+
+mvn archetype:generate -DgroupId=workshopd6 -DartifactId=workshopd6 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+mvn compile exec:java -Dexec.mainClass="workshopd6.ServerApp" -Dexec.args="3000 cookie_file.txt" 		server
+mvn compile exec:java -Dexec.mainClass="workshopd6.ClientApp" -Dexec.args="localhost:3000"				client 		localhost is 127. smth smth
+
+mvn package 		for jaring
+
+.class	.gitignore
+classes
